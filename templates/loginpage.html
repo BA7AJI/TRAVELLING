@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>login page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/login.css' %}">
+</head>
+
+<body>
+
+<div class="box">
+    
+    <form id="form" action="login" method="post">
+        
+        {% csrf_token %}
+
+        <div class="topic">
+            <label for="username" id="label-username">
+            USER NAME:
+            </label>
+
+            <input type="text" id="username" name="text">
+        </div>
+
+        <div class="topic">
+            <label for="password" id="label-password">
+            PASSWORD:
+            </label>
+
+            <input type="password" id="password" name="password">
+        </div> 
+
+        <div class="topic" id="remb">
+            <input type="checkbox" id="rememberme">
+
+            <label for="rememberme" id="label-rememberme">
+            Remember me
+            </label>
+        </div>
+
+        <a href="1st page.html"  class="login ">login</a>
+        
+        <div>
+            {% for message in messages %}
+            <h3> {{message}} </h3>
+            {% endfor %}
+        </div>
+
+
+    
+
+        
+
+    </form>
+</div>
+</body>
+</html>
